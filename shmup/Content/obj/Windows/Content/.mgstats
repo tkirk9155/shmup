@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Cadie/source/repos/shmup/shmup/Content/ship01.png","C:/Users/Cadie/source/repos/shmup/shmup/Content/bin/Windows/Content/ship01.xnb","TextureProcessor","Texture2DContent",409,14485,0.110732
+"C:/Users/Cadie/source/repos/shmup/shmup/Content/shot02.png","C:/Users/Cadie/source/repos/shmup/shmup/Content/bin/Windows/Content/shot02.xnb","TextureProcessor","Texture2DContent",254,2021,0.1102119
