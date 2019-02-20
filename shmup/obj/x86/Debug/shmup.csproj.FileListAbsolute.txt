@@ -47,3 +47,28 @@ C:\Users\Cadie\source\repos\shmup\shmup\obj\x86\Debug\shmup.csproj.CopyComplete
 C:\Users\Cadie\source\repos\shmup\shmup\obj\x86\Debug\shmup.exe
 C:\Users\Cadie\source\repos\shmup\shmup\obj\x86\Debug\shmup.pdb
 C:\Users\Cadie\source\repos\shmup\shmup\bin\Windows\x86\Debug\Content\shot02.xnb
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\Content\ship01.xnb
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\Content\shot02.xnb
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\shmup.exe
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\shmup.pdb
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\obj\x86\Debug\shmup.csprojAssemblyReference.cache
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\obj\x86\Debug\shmup.csproj.CoreCompileInputs.cache
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\obj\x86\Debug\shmup.csproj.CopyComplete
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\obj\x86\Debug\shmup.exe
+C:\Users\Tom Kirk\Documents\GitHub\shmup\shmup\obj\x86\Debug\shmup.pdb

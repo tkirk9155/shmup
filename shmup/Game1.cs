@@ -102,5 +102,28 @@ namespace shmup
 
             base.Draw(gameTime);
         }
+
+
+        private void CheckCollision()
+        {
+            CollisionGrid grid = new CollisionGrid();
+            float leftX = 0;
+            float rightX = (float)GraphicsDevice.DisplayMode.Width / 5;
+            float topY = 0;
+            float bottomY = (float)GraphicsDevice.DisplayMode.Height / 5;
+
+            foreach (var sprite in _sprites)
+            {
+                if (sprite.Position.X >= leftX && 
+                    sprite.Position.X <= rightX && 
+                    sprite.Position.Y >= topY && 
+                    sprite.Position.Y <= bottomY)
+                {
+
+                }
+            }
+        }
+
+
     }
 }
