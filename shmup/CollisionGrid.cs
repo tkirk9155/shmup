@@ -17,13 +17,26 @@ namespace shmup
             public bool Check = false;
         }
 
-        public Square[,] Squares = new Square[,]
+        public Square[,] Squares;
+
+        public void New()
         {
-            {new Square(), new Square(), new Square(), new Square(), new Square()},
-            {new Square(), new Square(), new Square(), new Square(), new Square()},
-            {new Square(), new Square(), new Square(), new Square(), new Square()},
-            {new Square(), new Square(), new Square(), new Square(), new Square()},
-            {new Square(), new Square(), new Square(), new Square(), new Square()}
-        };
-    }
+            Clear();
+        }
+
+        public void Clear()
+        {
+            Squares = null;
+            Squares = new Square[,]
+            {
+                { new Square(), new Square(), new Square(), new Square(), new Square()},
+                { new Square(), new Square(), new Square(), new Square(), new Square()},
+                { new Square(), new Square(), new Square(), new Square(), new Square()},
+                { new Square(), new Square(), new Square(), new Square(), new Square()},
+                { new Square(), new Square(), new Square(), new Square(), new Square()}
+            };
+        }
+
+
+    } 
 }

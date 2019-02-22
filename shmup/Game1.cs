@@ -19,6 +19,8 @@ namespace shmup
         //private Sprite _playerOne;
         private Player _playerOne;
         private List<Sprite> _sprites;
+        //private CollisionGrid _grid;
+        private List<Sprite>[,] _grid;
 
 
         public Game1()
@@ -71,11 +73,30 @@ namespace shmup
 
         protected override void Update(GameTime gameTime)
         {
-            foreach (var sprite in _sprites.ToArray())
-                sprite.Update(gameTime, _sprites);
+            _grid = new List<Sprite>[,]
+            {
+                {null, null, null, null, null },
+                {null, null, null, null, null },
+                {null, null, null, null, null },
+                {null, null, null, null, null },
+                {null, null, null, null, null }
+            };
 
+            foreach (var sprite in _sprites.ToArray())
+                sprite.Update(gameTime, _sprites, _grid);
+
+            int gX;
+            int gY;
             for (int i = 0; i < _sprites.Count; i++)
             {
+                gX = (int)_sprites[i].Position.X;
+                gY = (int)_sprites[i].Position.Y;
+
+                if (_grid[gX, gY] != null)
+                {
+                    CheckCollision();
+                }
+
                 if (_sprites[i].IsRemoved)
                 {
                     _sprites.RemoveAt(i);
@@ -106,22 +127,7 @@ namespace shmup
 
         private void CheckCollision()
         {
-            CollisionGrid grid = new CollisionGrid();
-            float leftX = 0;
-            float rightX = (float)GraphicsDevice.DisplayMode.Width / 5;
-            float topY = 0;
-            float bottomY = (float)GraphicsDevice.DisplayMode.Height / 5;
-
-            foreach (var sprite in _sprites)
-            {
-                if (sprite.Position.X >= leftX && 
-                    sprite.Position.X <= rightX && 
-                    sprite.Position.Y >= topY && 
-                    sprite.Position.Y <= bottomY)
-                {
-
-                }
-            }
+            
         }
 
 
