@@ -27,7 +27,7 @@ namespace shmup.Sprites.Player
 
         public override void Update(GameTime gameTime, 
             List<Sprite> sprites, 
-            List<Sprite>[,] grid = null)
+            CollisionGrid grid)
         {
             //base.Update(gameTime, sprites);
             _previousKey = _currentKey;
@@ -55,13 +55,8 @@ namespace shmup.Sprites.Player
                 sprites.Add(bullet);
             }
 
-            int gX = (int)Position.X / 5;
-            int gY = (int)Position.Y / 5;
-
-            if (grid[gX, gY] is null)
-                grid[gX, gY] = new List<Sprite>();
-
-            grid[gX, gY].Add(this);
+            int gX = (int)Position.X / 10;
+            int gY = (int)Position.Y / 10;
 
         }
     }

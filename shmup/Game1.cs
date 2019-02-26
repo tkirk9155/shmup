@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using shmup.Sprites;
+using shmup.Sprites.Enemies;
 using shmup.Sprites.Bullets;
 using shmup.Sprites.Player;
 using System.Collections.Generic;
@@ -20,7 +21,8 @@ namespace shmup
         private Player _playerOne;
         private List<Sprite> _sprites;
         //private CollisionGrid _grid;
-        private List<Sprite>[,] _grid;
+        //private List<Sprite>[,] _grid;
+        private CollisionGrid _grid;
 
 
         public Game1()
@@ -58,6 +60,7 @@ namespace shmup
             {
                 _playerOne
             };
+            _grid = new CollisionGrid();
             
         }
 
@@ -73,35 +76,12 @@ namespace shmup
 
         protected override void Update(GameTime gameTime)
         {
-            _grid = new List<Sprite>[,]
-            {
-                {null, null, null, null, null },
-                {null, null, null, null, null },
-                {null, null, null, null, null },
-                {null, null, null, null, null },
-                {null, null, null, null, null }
-            };
+            _grid.Clear();
 
             foreach (var sprite in _sprites.ToArray())
-                sprite.Update(gameTime, _sprites, _grid);
-
-            int gX;
-            int gY;
-            for (int i = 0; i < _sprites.Count; i++)
             {
-                gX = (int)_sprites[i].Position.X;
-                gY = (int)_sprites[i].Position.Y;
-
-                if (_grid[gX, gY] != null)
-                {
-                    CheckCollision();
-                }
-
-                if (_sprites[i].IsRemoved)
-                {
-                    _sprites.RemoveAt(i);
-                    i--;
-                }
+                _grid.Add(sprite);
+                sprite.Update(gameTime, _sprites, _grid);
             }
 
             base.Update(gameTime);
@@ -122,12 +102,6 @@ namespace shmup
             _spriteBatch.End();
 
             base.Draw(gameTime);
-        }
-
-
-        private void CheckCollision()
-        {
-            
         }
 
 

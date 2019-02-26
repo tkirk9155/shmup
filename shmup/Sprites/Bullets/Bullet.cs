@@ -11,16 +11,17 @@ namespace shmup.Sprites.Bullets
     class Bullet : Sprite
     {
         private float _timer;
+        public int Damage;
 
 
         public Bullet(Texture2D texture)
             : base(texture)
         {
-            
+            this.Bullet = true;
         }
 
 
-        public override void Update(GameTime gameTime, List<Sprite> sprites)
+        public override void Update(GameTime gameTime, List<Sprite> sprites, CollisionGrid grid)
         {
             //base.Update(gameTime, sprites);
             _timer += (float)gameTime.ElapsedGameTime.TotalSeconds;

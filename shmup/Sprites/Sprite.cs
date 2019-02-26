@@ -19,6 +19,24 @@ namespace shmup.Sprites
         public Sprite Parent;
         public float Lifespan = 0f;
         public bool IsRemoved = false;
+        public bool Enemy = false;
+        public bool Bullet = false;
+        public bool CheckGrid = false;
+        public int Width;
+        public int Height;
+        
+        public int Health
+        {
+            get { return Health; }
+            set
+            {
+                Health = value;
+                if (Health <= 0)
+                    IsRemoved = true;
+            }
+        }
+
+
 
         public Sprite(Texture2D texture)
         {
@@ -28,7 +46,7 @@ namespace shmup.Sprites
 
         
 
-        public virtual void Update(GameTime gameTime, List<Sprite> sprites, List<Sprite>[,] grid)
+        public virtual void Update(GameTime gameTime, List<Sprite> sprites, CollisionGrid grid)
         {
             
         }
