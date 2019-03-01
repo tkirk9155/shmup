@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using shmup;
 
 namespace shmup.Sprites
 {
@@ -19,11 +20,10 @@ namespace shmup.Sprites
         public Sprite Parent;
         public float Lifespan = 0f;
         public bool IsRemoved = false;
-        public bool Enemy = false;
-        public bool Bullet = false;
+        //public bool Enemy = false;
+        //public bool Bullet = false;
         public bool CheckGrid = false;
-        public int Width;
-        public int Height;
+        public SpriteType Type;
         
         public int Health
         {
@@ -36,6 +36,11 @@ namespace shmup.Sprites
             }
         }
 
+        public int Width
+        { get { return _texture.Width; } }
+        public int Height
+        { get { return _texture.Height; } }
+
 
 
         public Sprite(Texture2D texture)
@@ -46,9 +51,19 @@ namespace shmup.Sprites
 
         
 
-        public virtual void Update(GameTime gameTime, List<Sprite> sprites, CollisionGrid grid)
+        public virtual void Update(GameTime gameTime, List<Sprite> sprites, CollisionGrid grid, Rectangle screenBounds)
         {
-            
+            //if ((Position.X + Width) > screenBounds.Width || Position.X < 0 || (Position.Y + Height) > screenBounds.Height || Position.Y < 0)
+            //    IsRemoved = true;
+        }
+
+
+        public virtual bool OffScreen(Rectangle screenBounds)
+        {
+            return ((Position.X + Width) > screenBounds.Width || 
+                Position.X < 0 || 
+                (Position.Y + Height) > screenBounds.Height || 
+                Position.Y < 0);
         }
 
 
@@ -64,5 +79,15 @@ namespace shmup.Sprites
         {
             return this.MemberwiseClone();
         }
+
+        public enum SpriteType : int
+        {
+            Player = 0,
+            PlayerBullet = 1,
+            Enemy = 2,
+            EnemyBullet = 3,
+            Powerup = 4
+        }
     }
+
 }

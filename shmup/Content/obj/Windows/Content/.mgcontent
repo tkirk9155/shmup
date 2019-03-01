@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Tom Kirk/Documents/GitHub/shmup/shmup/Content/ship01.png</File>
-    <File>C:/Users/Tom Kirk/Documents/GitHub/shmup/shmup/Content/shot02.png</File>
+    <File>C:/Users/Cadie/source/repos/shmup/shmup/Content/ship01.png</File>
+    <File>C:/Users/Cadie/source/repos/shmup/shmup/Content/shot02.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

@@ -24,6 +24,11 @@ namespace shmup
         //private List<Sprite>[,] _grid;
         private CollisionGrid _grid;
 
+        private Vector2 ScreenBounds
+        {
+            get { return new Vector2((float)GraphicsDevice.Viewport.Width, (float)GraphicsDevice.Viewport.Height); }
+        }
+
 
         public Game1()
         {
@@ -78,10 +83,11 @@ namespace shmup
         {
             _grid.Clear();
 
-            foreach (var sprite in _sprites.ToArray())
+            foreach (var sprite in _sprites.FindAll(s => !s.IsRemoved))
+            //foreach (var sprite in _sprites.ToArray())
             {
                 _grid.Add(sprite);
-                sprite.Update(gameTime, _sprites, _grid);
+                sprite.Update(gameTime, _sprites, _grid, GraphicsDevice.Viewport.Bounds);
             }
 
             base.Update(gameTime);

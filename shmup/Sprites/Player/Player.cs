@@ -20,14 +20,14 @@ namespace shmup.Sprites.Player
         public Player(Texture2D texture)
             : base(texture)
         {
-
+            Type = SpriteType.Player;
         }
 
 
 
         public override void Update(GameTime gameTime, 
             List<Sprite> sprites, 
-            CollisionGrid grid)
+            CollisionGrid grid, Rectangle screenBounds)
         {
             //base.Update(gameTime, sprites);
             _previousKey = _currentKey;
@@ -51,12 +51,12 @@ namespace shmup.Sprites.Player
                 bullet.Velocity = this.Velocity * 2;
                 bullet.Lifespan = 2f;
                 bullet.Parent = this;
+                bullet.Type = SpriteType.PlayerBullet;
 
                 sprites.Add(bullet);
             }
 
-            int gX = (int)Position.X / 10;
-            int gY = (int)Position.Y / 10;
+            
 
         }
     }

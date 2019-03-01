@@ -54,8 +54,8 @@ namespace shmup
         public void Add(Sprite sprite)
         {
 
-            int gX = (int)(System.Math.Floor(sprite.Position.X) / 10);
-            int gY = (int)(System.Math.Floor(sprite.Position.Y) / 10);
+            int gX = (int)(System.Math.Floor(sprite.Position.X) / 100);
+            int gY = (int)(System.Math.Floor(sprite.Position.Y) / 100);
 
             Squares[gX, gY].Sprites.Add(sprite);
             if (sprite.CheckGrid)
@@ -72,17 +72,42 @@ namespace shmup
             {
                 while (gX < 10)
                 {
+                    //if (Squares[gX, gY].Check)
+                    //{
+                    //    foreach(Sprite ship in Squares[gX, gY].Sprites.Where(s => !s.IsRemoved && !s.Bullet))
+                    //    {
+                    //        Rectangle currentRect = new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height);
+                    //        foreach(Bullet bullet in Squares[gX, gY].Sprites.Where(b => !b.IsRemoved && b.Enemy != ship.Enemy))
+                    //        {
+                    //            if (new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height).IntersectsWith(currentRect))
+                    //                ship.Health -= bullet.Damage;
+                    //        }
+                    //    }
+                    //}
                     if (Squares[gX, gY].Check)
                     {
-                        foreach(Sprite ship in Squares[gX, gY].Sprites.Where(s => !s.IsRemoved && !s.Bullet))
+                        // check if player hit enemy
+                        foreach(Sprite ship in Squares[gX, gY].Sprites.Where(s => s.Type == Sprite.SpriteType.Enemy && !s.IsRemoved))
                         {
-                            Rectangle currentRect = new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height);
-                            foreach(Bullet bullet in Squares[gX, gY].Sprites.Where(b => !b.IsRemoved && b.Enemy != ship.Enemy))
+                            Rectangle rect = new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height);
+                            foreach (Bullet bullet in Squares[gX, gY].Sprites.Where(b => b.Type == Sprite.SpriteType.PlayerBullet && !b.IsRemoved))
                             {
-                                if (new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height).IntersectsWith(currentRect))
+                                if (new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height).IntersectsWith(rect))
                                     ship.Health -= bullet.Damage;
                             }
                         }
+
+                        // check if enemy hit player
+                        foreach (Sprite ship in Squares[gX, gY].Sprites.Where(s => s.Type == Sprite.SpriteType.Player && !s.IsRemoved))
+                        {
+                            Rectangle rect = new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height);
+                            foreach (Bullet bullet in Squares[gX, gY].Sprites.Where(b => (b.Type == Sprite.SpriteType.EnemyBullet || b.Type == Sprite.SpriteType.Enemy) && !b.IsRemoved))
+                            {
+                                if (new Rectangle((int)ship.Position.X, (int)ship.Position.Y, ship.Width, ship.Height).IntersectsWith(rect))
+                                    ship.Health -= bullet.Damage;
+                            }
+                        }
+
                     }
                     gX++;
                 }
