@@ -53,14 +53,18 @@ namespace shmup
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            var texture = Content.Load<Texture2D>("ship01");
-            var bulletTexture = Content.Load<Texture2D>("shot02");
-            _playerOne = new Player(texture)
+            Textures.Load(Content);
+            //var texture = Content.Load<Texture2D>("ship01");
+            //var bulletTexture = Content.Load<Texture2D>("shot02");
+            _playerOne = new Player(Textures.player01)
             {
                 Position = new Vector2(100, 100),
                 Velocity = 3f,
-                Bullet = new Bullet(bulletTexture)
+                Bullet = new Bullet(Textures.playerBullet01)
             };
+
+            
+
             _sprites = new List<Sprite>()
             {
                 _playerOne

@@ -43,12 +43,15 @@
   <ItemGroup>
     <Compile Include="CollisionGrid.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Gamestates\LevelOne.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sprites\Bullets\Bullet.cs" />
     <Compile Include="Sprites\Enemies\Enemy.cs" />
-    <Compile Include="Sprites\Player\Player.cs" />
+    <Compile Include="Sprites\Enemies\Enemy01.cs" />
+    <Compile Include="Sprites\Players\Player.cs" />
     <Compile Include="Sprites\Sprite.cs" />
+    <Compile Include="Textures.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

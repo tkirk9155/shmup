@@ -12,15 +12,18 @@ using shmup.Sprites.Enemies;
 using shmup.Sprites.Bullets;
 using shmup.Sprites.Player;
 
-namespace shmup.Sprites.Enemies
+namespace shmup.Gamestates
 {
-    class Enemy : Sprite
+    public static class LevelOne
     {
-        public Enemy(Texture2D texture)
-            : base(texture)
+        private static List<Enemy> _enemies = new List<Enemy>()
+        {
+            new Enemy(Textures.enemy01);
+        }
+
+        static void Start()
         {
 
         }
-
     }
 }

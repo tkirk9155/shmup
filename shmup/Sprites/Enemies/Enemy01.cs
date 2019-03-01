@@ -12,14 +12,17 @@ using shmup.Sprites.Enemies;
 using shmup.Sprites.Bullets;
 using shmup.Sprites.Player;
 
+
 namespace shmup.Sprites.Enemies
 {
-    class Enemy : Sprite
+    class Enemy01 : Enemy
     {
-        public Enemy(Texture2D texture)
-            : base(texture)
-        {
 
+        private Texture2D texture = 
+
+        public Enemy01()
+        {
+            
         }
 
     }

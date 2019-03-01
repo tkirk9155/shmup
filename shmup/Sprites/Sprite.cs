@@ -24,6 +24,7 @@ namespace shmup.Sprites
         //public bool Bullet = false;
         public bool CheckGrid = false;
         public SpriteType Type;
+        public int WaitToSpawn;
         
         public int Health
         {
